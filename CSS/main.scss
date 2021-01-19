@@ -1,0 +1,509 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 1rem/1.5 Arial, Helvetica, sans-serif;
+  background-color: black;
+  margin: 0;
+  line-height: 1.6;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+*----------- UTILITIES ----------------*
+--------------------------------------------------------------*/
+.container {
+  max-width: 90%;
+  text-align: center;
+  margin: auto;
+  padding: 0 3rem;
+}
+img {
+  margin-bottom: 2rem;
+}
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+/*button*/
+.btn {
+  background-color: red;
+  margin: 0px;
+  padding: 0.5rem;
+  box-shadow: black;
+  border-radius: 0.5rem;
+  &:hover,
+  &:active {
+    box-shadow: 0 0 30px red;
+    transform: translateY(-0.25em);
+    transition: all 0.5s ease;
+  }
+}
+
+/*--------------------------------------------------------------
+ *------------------HEADER-------------*
+--------------------------------------------------------------*/
+header {
+  background: rgb(163, 34, 34);
+  border-bottom: 3px solid #333;
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  .logo span {
+    font-size: 2rem;
+    color: rgb(245, 240, 240);
+  }
+}
+
+.ham {
+  position: relative;
+  z-index: 99999;
+  width: 36px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("../images/musical-note-with-three-lines-pngrepo-com.png");
+  background-size: cover;
+}
+
+.showClose {
+  background-image: url("../images/128-1281855_buy-online-transparent-white-x-png.png");
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(163, 34, 34);
+  border: 1px solid #fff;
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  color: white;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+  z-index: 99998;
+}
+
+.showNav {
+  transform: translateY(85px);
+}
+
+.navbar ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  li a {
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+  }
+}
+.navbar ul li a:hover,
+.navbar ul li a:focus {
+  border-bottom: 2px solid white;
+}
+
+/*--------------------------------------------------------------
+ *------------------ SHOWCASE SESSION -------------*
+--------------------------------------------------------------*/
+#showcase {
+  width: 100%;
+  min-height: 90vh;
+  background: url("../images/pexels-photo-813940.jpeg") center center;
+  background-size: cover;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+
+#showcase .container {
+  padding-top: 150px;
+}
+
+#showcase:before {
+  content: "";
+  //background: linear-gradient(to top, rgba(121, 90, 90, 0.9),transparent,  rgb(255, 175, 175));
+  background: linear-gradient(to top, rgb(8, 8, 8), transparent);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#showcase h1 {
+  margin: 0 0 40px 0;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 56px;
+  color: rgb(163, 34, 34);
+  text-shadow: 20px 8px 2px rgba(0, 0, 0, 0.9);
+}
+
+#showcase h2 {
+  color: #eee;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+#showcase p {
+  color: rgb(145, 141, 141);
+  letter-spacing: 0.5px;
+}
+/*--------------------------------------------------------------
+ *------------------MUSIC  & VIDEO SECTION -------------*
+--------------------------------------------------------------*/
+.section {
+  background: rgb(14, 13, 13);
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
+  i {
+    color: red;
+    padding-right: 0.5rem;
+  }
+  img {
+    width: 22rem;
+  }
+}
+.section-head {
+  padding-top: 10px;
+}
+.section h3 {
+  font-size: 1.5rem;
+}
+
+/*--------------------------------------------------------------
+*------------ CAROUSEL ---------------*
+--------------------------------------------------------------*/
+.music-download {
+  background: black;
+}
+
+.carousel-box {
+  display: flex;
+  flex-direction: column;
+  margin: auto 10px;
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  .carousel-download {
+    display: flex;
+    .download-btns {
+      background: rgba(153, 147, 147, 0.6);
+      width: 40px;
+      padding: 5px 10px;
+      font-size: 10px;
+      text-align: center;
+      border-radius: 3px;
+      margin: auto;
+    }
+    :hover {
+      background: red;
+      border: 1px solid white;
+    }
+  }
+}
+
+.owl-item img {
+  width: 60%;
+  opacity: 0.5;
+  transition: 0.3s;
+  filter: grayscale(100);
+}
+
+.owl-item img:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.owl-nav,
+.owl-dots {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.owl-dot {
+  display: inline-block;
+  margin: 20px 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+}
+
+.owl-dot.active {
+  background-color: #e03a3c !important;
+}
+
+/*--------------------------------------------------------------
+*------------ Connect ---------------*
+--------------------------------------------------------------*/
+.connect {
+  background: linear-gradient(bottom, rgb(163, 34, 34), black);
+  min-height: 20vh;
+  display: flex;
+  justify-items: space-around;
+  padding: 1rem;
+  gap: 2%;
+}
+
+.social-media {
+  text-align: center !important;
+  margin: auto !important;
+  .connect__icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .connect__icons ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0;
+    li a {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      font-size: 20px;
+      margin-right: 15px;
+      display: block;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+    li a:hover {
+      color: #fff;
+      transform: rotate(360deg);
+      background: black;
+      transition: all 1s;
+    }
+  }
+}
+
+.newsletter {
+  text-align: center !important;
+  margin: auto !important;
+  input,
+  .button {
+    outline: none;
+    border: none;
+    height: 35px;
+    border-radius: 5px;
+    padding: 0 10px;
+    & :hover {
+      background: red;
+    }
+  }
+  .button {
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 7px;
+    background: red;
+    &:hover {
+      background: rgb(228, 222, 222);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .connect {
+    flex-direction: column;
+  }
+}
+
+/*--------------------------------------------------------------
+*----------- ENTERTAINMENT SECTION ---------------- *
+--------------------------------------------------------------*/
+.Entertainment-section {
+  background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/everythingmusic.jpg") fixed center center;
+  background-size: cover;
+  padding: 60px 0;
+}
+
+.Entertainment-section h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.Entertainment-section p {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+ *------------------ GIFT CARD SESSION-------------*
+--------------------------------------------------------------*/
+.section-giftcard {
+  background: linear-gradient(to right, rgb(155, 87, 87), rgb(22, 21, 21));
+}
+.giftcard {
+  display: flex;
+  padding: 2rem;
+  margin: auto;
+}
+.giftcard__img {
+  flex: 50%;
+  img {
+    width: 300px;
+    display: flex;
+    padding: 2rem;
+    margin: auto;
+  }
+}
+.giftcard__text {
+  margin-right: 2rem;
+  flex: 50%;
+}
+
+/*--------------------------------------------------------------
+*----------- FOOTER SECTION ----------------*
+--------------------------------------------------------------*/
+footer .footer-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
+  padding: 2rem;
+  margin: auto;
+  text-align: left;
+  font-size: 14px;
+  background: rgb(163, 34, 34);
+  color: #fff;
+  ul li a {
+    color: rgb(148, 148, 150);
+  }
+}
+
+footer .footer-col ul li:first-child {
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+footer .footer-col li a:hover,
+footer .footer-col li a:active,
+footer .footer-col li a:focus {
+  color: #fff;
+}
+.footer-bottom {
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  background: rgb(247, 46, 46);
+}
+
+/*--------------------------------------------------------------
+*----------- Back to top button ----------------*
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  right: 5px;
+  bottom: 25px;
+  z-index: 999;
+}
+
+.back-to-top i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: all 0.4s;
+}
+
+.back-to-top i:hover {
+  background: rgb(255, 5, 5);
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+ *------------------ MEDIA QUERIES -------------*
+--------------------------------------------------------------*/
+@media (max-width: 500px) {
+  #showcase h1 {
+    margin: 0 0 50px 0;
+    font-size: 3rem;
+  }
+
+  #showcase h2 {
+    font-size: 1rem;
+  }
+  .section {
+    img {
+      width: 18rem;
+    }
+  }
+  .giftcard {
+    flex-direction: column;
+    margin: AUTO;
+    padding: 2rem;
+    text-align: center;
+  }
+  .giftcard__text {
+    margin-right: 0rem;
+  }
+  footer .footer-col {
+    grid-template-columns: 1fr;
+    margin: auto;
+    text-align: center;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #showcase {
+    height: 100%;
+  }
+  #showcase h1 {
+    font-size: 40px;
+  }
+  .section {
+    min-height: 40vh;
+  }
+  .giftcard {
+    flex-direction: column;
+    padding: 3rem;
+  }
+  .giftcard__img {
+    display: none;
+  }
+  footer .footer-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  #showcase {
+    background-attachment: fixed;
+  }
+}
